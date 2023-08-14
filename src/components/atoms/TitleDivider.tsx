@@ -10,17 +10,18 @@ interface TitleDividerProps {
 const TitleDivider = ({ children }: TitleDividerProps) => {
   return (
     <Reveal>
-      <Container>
-        <CodeSpan thick>{children}</CodeSpan>
+      <Container long={children.length * 20 + 100}>
+        <CodeSpan thick fontSize="1.8vw">
+          {children}
+        </CodeSpan>
       </Container>
     </Reveal>
   );
 };
 
-const Container = styled.div`
-  width: 300px;
+const Container = styled.div<{ long: number }>`
+  width: ${({ long }) => `${long}px`};
   border-bottom: 1px solid ${({ theme }) => theme.colors.codeGreen};
-  font-size: 2vw;
   margin: 16px 0px;
 `;
 

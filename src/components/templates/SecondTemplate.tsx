@@ -13,7 +13,9 @@ const SecondTemplate = () => {
       <LeftDiv>
         <div>
           <Reveal>
-            <CodeSpan>{"Hello, I'm Frontend Developer"}</CodeSpan>
+            <CodeSpan fontSize="1.8vw">
+              {"Hello, I'm Frontend Developer"}
+            </CodeSpan>
           </Reveal>
           <Name>
             변기원<CodeSpan color="white">Byun Kiwon</CodeSpan>

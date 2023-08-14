@@ -7,6 +7,7 @@ interface CodeSpanProps {
   color?: 'codeGreen' | 'codePink' | 'codeBlue' | 'white';
   className?: string;
   thick?: boolean;
+  fontSize?: string;
 }
 const nanumCodeing = Nanum_Gothic_Coding({
   weight: '400',
@@ -22,20 +23,23 @@ const CodeSpan = ({
   color = 'codeGreen',
   className,
   thick,
+  fontSize = '1.3vw',
 }: CodeSpanProps) => {
   return (
     <Span
       className={`${
         thick ? nanumCodeingThick.className : nanumCodeing.className
       } ${className}`}
-      color={color}>
+      color={color}
+      fontSize={fontSize}>
       {children}
     </Span>
   );
 };
 
-const Span = styled.span<{ color: string }>`
+const Span = styled.span<{ color: string; fontSize: string }>`
   color: ${({ theme, color }) => theme.colors[color]};
+  font-size: ${({ fontSize }) => fontSize};
 `;
 
 export default CodeSpan;

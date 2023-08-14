@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
+import CodeSpan from '../atoms/CodeSpan';
 
 const Header = () => {
   const [scrollOpacity, setScrollOpacity] = useState(0); // 스크롤에 따른 투명도 상태 관리
@@ -25,7 +26,11 @@ const Header = () => {
     };
   }, []);
 
-  return <Container opacity={scrollOpacity}>header</Container>;
+  return (
+    <Container opacity={scrollOpacity}>
+      <CodeSpan>Title</CodeSpan>
+    </Container>
+  );
 };
 
 const Container = styled.header<{ opacity: number }>`

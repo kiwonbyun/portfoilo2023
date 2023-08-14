@@ -54,7 +54,7 @@ const EmailWrapper = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   height: 60px;
 `;
 
