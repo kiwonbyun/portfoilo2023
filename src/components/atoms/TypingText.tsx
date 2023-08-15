@@ -5,12 +5,14 @@ interface TypingTextProps {
   text: string;
   color?: 'codeGreen' | 'codePink' | 'codeBlue' | 'white';
   size?: string;
+  noBlink?: boolean;
 }
 
 const TypingText = ({
   text,
   color = 'white',
   size = '14px',
+  noBlink = false,
 }: TypingTextProps) => {
   const [animationStarted, setAnimationStarted] = useState(false);
   const typingRef = useRef<HTMLDivElement | null>(null);
@@ -39,7 +41,8 @@ const TypingText = ({
       ref={typingRef}
       color={color}
       animationstarted={animationStarted.toString()}
-      size={size}>
+      size={size}
+      blink={noBlink}>
       <div className="typing-demo">{text}</div>
     </Typing>
   );
@@ -49,6 +52,7 @@ const Typing = styled.div<{
   color: string;
   animationstarted: string;
   size: string;
+  blink: boolean;
 }>`
   @keyframes typing {
     from {
@@ -81,7 +85,7 @@ const Typing = styled.div<{
         : 'none'};
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid;
+    border-right: ${({ blink }) => (blink ? 'none' : ' 3px solid')};
     font-size: ${({ size }) => size};
     color: ${({ theme, color }) => theme.colors[color]};
   }

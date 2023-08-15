@@ -5,9 +5,9 @@ import { myWorkHistory } from '@/constants/infos';
 import { styled } from 'styled-components';
 import TextBoard from '../atoms/TextBoard';
 
-const WorkingExperience = () => {
+const WorkingExperience = ({ id }: { id: string }) => {
   return (
-    <TitledContainer title="WORKING EXPERIENCE">
+    <TitledContainer title="WORKING EXPERIENCE" id={id}>
       <ExperienceWrapper>
         <CodeSpan className="sub-title">
           2022.07 ~ Present: 더 파이러츠(인어교주해적단) 프론트엔드 개발

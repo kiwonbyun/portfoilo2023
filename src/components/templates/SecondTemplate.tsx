@@ -7,9 +7,9 @@ import Image from 'next/image';
 import profileImage from 'public/profile.jpeg';
 import TitledContainer from '../molecules/TitledContainer';
 
-const SecondTemplate = () => {
+const SecondTemplate = ({ id }: { id: string }) => {
   return (
-    <SecondSection>
+    <SecondSection id={id}>
       <LeftDiv>
         <div>
           <Reveal>
@@ -50,7 +50,6 @@ const SecondTemplate = () => {
             objectFit: 'contain',
           }}
         />
-        <div className="overlay"></div>
       </RightDiv>
     </SecondSection>
   );

@@ -6,7 +6,7 @@ interface FlexBarProps {
   color?: 'codeGreen' | 'codePink' | 'codeBlue' | 'white' | 'darkGreen';
   content?: string;
   leftPadding?: number;
-  contentColor?: 'black' | 'white';
+  contentcolor?: 'black' | 'white';
 }
 
 const FlexBar = ({
@@ -14,7 +14,7 @@ const FlexBar = ({
   color = 'codeGreen',
   content = '',
   leftPadding = 0,
-  contentColor = 'white',
+  contentcolor = 'white',
 }: FlexBarProps) => {
   return (
     <Bar
@@ -24,14 +24,14 @@ const FlexBar = ({
         width,
       }}
       color={color}
-      contentColor={contentColor}>
+      contentcolor={contentcolor}>
       <span>{content}</span>
     </Bar>
   );
 };
 
-const Bar = styled.div<{ color: string; contentColor: string }>`
-  height: 30px;
+const Bar = styled.div<{ color: string; contentcolor: string }>`
+  height: 40px;
   width: 100%;
   background-color: ${({ theme, color }) => theme.colors[color]};
   transition: width 0.7s ease;
@@ -43,7 +43,7 @@ const Bar = styled.div<{ color: string; contentColor: string }>`
 
   span {
     font-size: 12px;
-    color: ${({ contentColor }) => contentColor};
+    color: ${({ contentcolor }) => contentcolor};
   }
 `;
 

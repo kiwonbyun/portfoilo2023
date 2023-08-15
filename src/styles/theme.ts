@@ -1,5 +1,6 @@
 interface Theme {
   colors: {
+    black: string;
     white: string;
     codeGreen: string;
     codePink: string;
@@ -10,6 +11,7 @@ interface Theme {
 
 const theme: Theme = {
   colors: {
+    black: 'black',
     white: 'white',
     codeGreen: '#2fe848',
     codePink: '#f23aca',

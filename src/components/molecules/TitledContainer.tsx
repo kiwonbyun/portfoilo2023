@@ -11,11 +11,12 @@ const nanumCodeing = Nanum_Gothic_Coding({
 interface TitledContainerProps {
   title: string;
   children: ReactElement | ReactElement[];
+  id: string;
 }
 
-const TitledContainer = ({ title, children }: TitledContainerProps) => {
+const TitledContainer = ({ title, children, id }: TitledContainerProps) => {
   return (
-    <SkillsDiv className={nanumCodeing.className}>
+    <SkillsDiv className={nanumCodeing.className} id={id}>
       <TitleDivider>{title}</TitleDivider>
       <div className="contents">{children}</div>
     </SkillsDiv>

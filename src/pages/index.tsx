@@ -10,23 +10,43 @@ import Skills from '@/components/templates/Skills';
 import WorkingExperience from '@/components/templates/WorkingExperience';
 import MSW from '@/components/templates/MSW';
 import Sentry from '@/components/templates/Sentry';
+import Atomic from '@/components/templates/Atomic';
+import StoryBook from '@/components/templates/StoryBook';
+import { useRouter } from 'next/router';
 
 const notosans = Noto_Sans_KR({ weight: '400', subsets: ['latin'] });
 
 export default function Home() {
+  const {
+    query: { target },
+  } = useRouter();
+
   useEffect(() => {
     AOS.init();
   }, []);
+
+  useEffect(() => {
+    (function handleHashChange() {
+      if (target) {
+        const targetElement = document.querySelector(`#${target}`);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    })();
+  }, [target]);
   return (
     <main className={notosans.className}>
       <Header />
       <FirstTemplate />
-      <SecondTemplate />
+      <SecondTemplate id="about" />
       <ThirdSection>
-        <Skills />
-        <WorkingExperience />
+        <Skills id="skills" />
+        <WorkingExperience id="experience" />
         <MSW />
         <Sentry />
+        <Atomic />
+        <StoryBook />
       </ThirdSection>
     </main>
   );

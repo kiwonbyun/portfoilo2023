@@ -4,9 +4,9 @@ import CodeSpan from '../atoms/CodeSpan';
 import TextBoard from '../atoms/TextBoard';
 import { mySkills } from '@/constants/infos';
 
-const Skills = () => {
+const Skills = ({ id }: { id: string }) => {
   return (
-    <TitledContainer title="SKILLS">
+    <TitledContainer title="SKILLS" id={id}>
       <CodeSpan className="sub-title">Junior Level</CodeSpan>
 
       <TextBoard>

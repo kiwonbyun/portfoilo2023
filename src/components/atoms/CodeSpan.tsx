@@ -8,6 +8,7 @@ interface CodeSpanProps {
   className?: string;
   thick?: boolean;
   fontSize?: string;
+  onClick?: () => void;
 }
 const nanumCodeing = Nanum_Gothic_Coding({
   weight: '400',
@@ -24,9 +25,11 @@ const CodeSpan = ({
   className,
   thick,
   fontSize = '1.3vw',
+  ...props
 }: CodeSpanProps) => {
   return (
     <Span
+      {...props}
       className={`${
         thick ? nanumCodeingThick.className : nanumCodeing.className
       } ${className}`}

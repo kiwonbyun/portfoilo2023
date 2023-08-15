@@ -4,16 +4,19 @@ import { styled } from 'styled-components';
 import FlexBar from '../atoms/FlexBar';
 import TextBoard from '../atoms/TextBoard';
 import CodeSpan from '../atoms/CodeSpan';
+import Button from '../atoms/Button';
 
 const MSW = () => {
   const [[one, two, three], setWidth] = useState([600, 250, 250]);
 
   const handleMockingClick = () => {
-    one === 730 ? setWidth([600, 250, 250]) : setWidth([730, 120, 120]);
+    one === 750 ? setWidth([600, 250, 250]) : setWidth([750, 100, 100]);
   };
   return (
-    <TitledContainer title="For Growing Product 1: 개발기간 단축을 위한 효율적인 Mocking 적용">
-      <MockingDiv>
+    <TitledContainer
+      title="For Growing Product 1: 개발기간 단축을 위한 효율적인 Mocking 적용"
+      id="msw">
+      <MockingDiv data-aos="fade-right">
         <FlexBar
           color="darkGreen"
           width={600}
@@ -34,8 +37,8 @@ const MSW = () => {
           />
           <FlexBar
             width={two}
-            content="Pending"
-            contentColor="black"
+            content="대기"
+            contentcolor="black"
             color="white"
             leftPadding={100}
           />
@@ -60,9 +63,9 @@ const MSW = () => {
           <CodeSpan color="codeBlue">•</CodeSpan>Result: api개발 종속성이 적어진
           만큼 대기 기간 감소
         </p>
-        <AfterButton onClick={handleMockingClick}>
+        <Button onClick={handleMockingClick}>
           {one === 600 ? '적용 후' : '적용 전'}
-        </AfterButton>
+        </Button>
       </TextBoard>
     </TitledContainer>
   );
@@ -70,12 +73,7 @@ const MSW = () => {
 
 const MockingDiv = styled.div`
   overflow: hidden;
-  margin-bottom: 30px;
-`;
-const AfterButton = styled.button`
-  height: 35px;
-  align-items: center;
-  cursor: pointer;
+  margin: 30px 0px 50px 0px;
 `;
 
 export default MSW;
