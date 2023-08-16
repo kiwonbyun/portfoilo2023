@@ -23,7 +23,7 @@ const SecondTemplate = ({ id }: { id: string }) => {
           <ContactButtons />
         </div>
 
-        <TitledContainer title="ABOUT ME">
+        <TitledContainer title="ABOUT ME" id="aboutme">
           <Article>
             <span>
               구성원 모두의 목표는 시장의 니즈를 충족하고 성장하는 Product를

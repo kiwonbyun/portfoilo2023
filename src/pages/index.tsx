@@ -13,6 +13,7 @@ import Sentry from '@/components/templates/Sentry';
 import Atomic from '@/components/templates/Atomic';
 import StoryBook from '@/components/templates/StoryBook';
 import { useRouter } from 'next/router';
+import PersonalProject from '@/components/templates/PersonalProject';
 
 const notosans = Noto_Sans_KR({ weight: '400', subsets: ['latin'] });
 
@@ -47,6 +48,7 @@ export default function Home() {
         <Sentry />
         <Atomic />
         <StoryBook />
+        <PersonalProject />
       </ThirdSection>
     </main>
   );

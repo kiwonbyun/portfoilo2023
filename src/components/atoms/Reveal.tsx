@@ -4,6 +4,7 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 interface RevealProps {
   children: ReactElement | ReactElement[];
   width?: 'fit-content' | '100%';
+  className?: string;
 }
 const variants = {
   hidden: { opacity: 0, y: 75 },
@@ -22,7 +23,11 @@ const slideTransition = {
   ease: 'easeIn',
 };
 
-const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
+const Reveal = ({
+  children,
+  width = 'fit-content',
+  className,
+}: RevealProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControl = useAnimation();
@@ -36,7 +41,10 @@ const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
   }, [isInView]);
 
   return (
-    <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }}>
+    <div
+      ref={ref}
+      style={{ position: 'relative', width, overflow: 'hidden' }}
+      className={className}>
       <motion.div
         variants={variants}
         initial="hidden"

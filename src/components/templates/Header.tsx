@@ -3,6 +3,8 @@ import { styled } from 'styled-components';
 import CodeSpan from '../atoms/CodeSpan';
 import Button from '../atoms/Button';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import hiImage from 'public/hi.png';
 
 const Header = () => {
   const { replace, pathname } = useRouter();
@@ -58,8 +60,9 @@ const Header = () => {
           EXPERIENCE
         </CodeSpan>
       </MenuDiv>
-      <div className="title">
-        <CodeSpan thick fontSize="1.4vw" onClick={handleclickTitle}>
+      <div className="title" onClick={handleclickTitle}>
+        <Image width={60} height={60} src={hiImage} alt="me" />
+        <CodeSpan thick fontSize="1.4vw">
           Byun Kiwon
         </CodeSpan>
       </div>
@@ -104,6 +107,17 @@ const Container = styled.header<{ opacity: number }>`
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    img {
+      position: relative;
+      bottom: 5px;
+    }
+    span {
+      position: relative;
+      right: 20px;
+      top: 5px;
+    }
   }
 `;
 
