@@ -42,7 +42,7 @@ const TypingText = ({
       color={color}
       animationstarted={animationStarted.toString()}
       size={size}
-      blink={noBlink}>
+      blink={noBlink.toString()}>
       <div className="typing-demo">{text}</div>
     </Typing>
   );
@@ -52,7 +52,7 @@ const Typing = styled.div<{
   color: string;
   animationstarted: string;
   size: string;
-  blink: boolean;
+  blink: string;
 }>`
   @keyframes typing {
     from {
@@ -85,7 +85,7 @@ const Typing = styled.div<{
         : 'none'};
     white-space: nowrap;
     overflow: hidden;
-    border-right: ${({ blink }) => (blink ? 'none' : ' 3px solid')};
+    border-right: ${({ blink }) => (blink === 'true' ? 'none' : ' 3px solid')};
     font-size: ${({ size }) => size};
     color: ${({ theme, color }) => theme.colors[color]};
   }

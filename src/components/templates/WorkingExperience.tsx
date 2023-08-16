@@ -15,7 +15,7 @@ const WorkingExperience = ({ id }: { id: string }) => {
         <TextBoard>
           {myWorkHistory.map((work, idx) => (
             <span key={idx}>
-              <CodeSpan color="codeBlue">•</CodeSpan>
+              <CodeSpan>•</CodeSpan>
               {work}
             </span>
           ))}

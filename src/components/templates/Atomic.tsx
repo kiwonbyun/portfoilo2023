@@ -102,16 +102,15 @@ const Atomic = () => {
       </ContentSection>
       <TextBoard>
         <span>
-          <CodeSpan color="codeBlue">•</CodeSpan>Problem Statement: Page파일에
-          집중된 Logic, View로 유지보수가 어려움
+          <CodeSpan>•</CodeSpan>Problem Statement: Page파일에 집중된 Logic,
+          View로 유지보수가 어려움
         </span>
         <span>
-          <CodeSpan color="codeBlue">•</CodeSpan>Solution: 재사용 가능한 Logic은
-          커스텀 훅으로, 재사용 가능한 View는 아토믹 컴포넌트로 분리
+          <CodeSpan>•</CodeSpan>Solution: 재사용 가능한 Logic은 커스텀 훅으로,
+          재사용 가능한 View는 아토믹 컴포넌트로 분리
         </span>
         <span>
-          <CodeSpan color="codeBlue">•</CodeSpan>Result: 가독성 증가 및 중복되는
-          코드 제거
+          <CodeSpan>•</CodeSpan>Result: 가독성 증가 및 중복되는 코드 제거
         </span>
         <Button
           onClick={() => {

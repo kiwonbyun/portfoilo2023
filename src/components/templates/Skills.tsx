@@ -11,7 +11,7 @@ const Skills = ({ id }: { id: string }) => {
 
       <TextBoard>
         <span>
-          <CodeSpan color="codeBlue">•</CodeSpan>JavaScript
+          <CodeSpan>•</CodeSpan>JavaScript
         </span>
       </TextBoard>
 
@@ -20,7 +20,7 @@ const Skills = ({ id }: { id: string }) => {
         <div>
           {mySkills.map((skill) => (
             <span key={skill}>
-              <CodeSpan color="codeBlue">•</CodeSpan>
+              <CodeSpan>•</CodeSpan>
               {skill}
             </span>
           ))}

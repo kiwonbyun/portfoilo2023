@@ -65,7 +65,7 @@ const Header = () => {
       </div>
       <div>
         <Button onClick={() => {}} color="inherit">
-          Hit Me Up
+          Resume
         </Button>
       </div>
     </Container>

@@ -52,16 +52,16 @@ const MSW = () => {
       </MockingDiv>
       <TextBoard>
         <p>
-          <CodeSpan color="codeBlue">•</CodeSpan>Problem Statement: api개발에
-          대한 종속성으로 대기 기간 생김, 전체 프로젝트 기간 Delay
+          <CodeSpan>•</CodeSpan>Problem Statement: api개발에 대한 종속성으로
+          대기 기간 생김, 전체 프로젝트 기간 Delay
         </p>
         <p>
-          <CodeSpan color="codeBlue">•</CodeSpan>Solution: MSW를 적용하여
-          네트워크 통신 환경에서 Mock데이터를 사용
+          <CodeSpan>•</CodeSpan>Solution: MSW를 적용하여 네트워크 통신 환경에서
+          Mock데이터를 사용
         </p>
         <p>
-          <CodeSpan color="codeBlue">•</CodeSpan>Result: api개발 종속성이 적어진
-          만큼 대기 기간 감소
+          <CodeSpan>•</CodeSpan>Result: api개발 종속성이 적어진 만큼 대기 기간
+          감소
         </p>
         <Button onClick={handleMockingClick}>
           {one === 600 ? '적용 후' : '적용 전'}

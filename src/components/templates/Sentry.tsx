@@ -20,7 +20,7 @@ const Sentry = () => {
       title="For Growing Product 2: 즉각적인 에러대응을 위한 Sentry 도입"
       id="sentry">
       <ContentSection>
-        <BoxWrapper after={after} data-aos="fade-right">
+        <BoxWrapper data-aos="fade-right">
           <FlexBox
             after={after}
             initialState={{ width: '230px', height: '250px', opacity: 1 }}
@@ -102,16 +102,16 @@ const Sentry = () => {
       </ContentSection>
       <TextBoard>
         <p>
-          <CodeSpan color="codeBlue">•</CodeSpan>Problem Statement: 유저의 에러
-          제보가 개발팀에 도착하기까지 인력, 데이터 손실
+          <CodeSpan>•</CodeSpan>Problem Statement: 유저의 에러 제보가 개발팀에
+          도착하기까지 인력, 데이터 손실
         </p>
         <p>
-          <CodeSpan color="codeBlue">•</CodeSpan>Solution: 유저의 제보에
-          의존하지 않는 에러 로그 시스템 도입
+          <CodeSpan>•</CodeSpan>Solution: 유저의 제보에 의존하지 않는 에러 로그
+          시스템 도입
         </p>
         <p>
-          <CodeSpan color="codeBlue">•</CodeSpan>Result: 담당 개발자 외 추가적인
-          인력낭비 감소, 선제적인 에러 대응 가능
+          <CodeSpan>•</CodeSpan>Result: 담당 개발자 외 추가적인 인력낭비 감소,
+          선제적인 에러 대응 가능
         </p>
         <Button onClick={handleClickAfter}>
           {after ? '적용 전' : '적용 후'}
@@ -121,7 +121,7 @@ const Sentry = () => {
   );
 };
 
-const BoxWrapper = styled.div<{ after: boolean }>`
+const BoxWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
