@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TitledContainer from '../molecules/TitledContainer';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import TextBoard from '../atoms/TextBoard';
 import Image from 'next/image';
 import codeImage from 'public/code.png';

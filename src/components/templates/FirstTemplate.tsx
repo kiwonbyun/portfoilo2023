@@ -1,21 +1,23 @@
 import React from 'react';
-import { styled } from 'styled-components';
+
 import CodeSpan from '../atoms/CodeSpan';
 import TypingText from '../atoms/TypingText';
+import styled from 'styled-components';
 
 const FirstTemplate = () => {
   return (
     <FirstPage>
-      {/* <AnimatedTextCharacter text="안녕하세요." /> */}
-      {/* <AnimatedTextWords text="성장하는 Product* 에 집중하는" size="7vh" /> */}
-      {/* <AnimatedTextCharacter text="프론트엔드 개발자 변기원입니다." /> */}
       <span>
         안녕하세요<CodeSpan>.</CodeSpan>
       </span>
 
       <TextWrapper>
-        <TypingText text="성장하는 Product" color="codeGreen" size="2em" />
-        <span>에 집중하는</span>
+        <TypingText
+          text="성장하는 Product"
+          color="codeGreen"
+          size="--font-size-title"
+        />
+        <span className="sub">에 집중하는</span>
       </TextWrapper>
 
       <span>
@@ -27,10 +29,24 @@ const FirstTemplate = () => {
 
 const TextWrapper = styled.div`
   position: relative;
-  span {
+  .sub {
     position: absolute;
-    top: 16px;
-    left: 567px;
+    top: 15px;
+    left: 545px;
+  }
+
+  @media (min-width: 360px) {
+    .sub {
+      top: 15px;
+      left: 452px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .sub {
+      top: 15px;
+      left: 545px;
+    }
   }
 `;
 
@@ -38,13 +54,13 @@ const FirstPage = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 33vh;
+  justify-content: center;
   padding-left: 18vw;
   gap: 10px;
   font-size: 4vh;
   font-family: SBaL;
   span {
-    font-size: 5.8vh;
+    font-size: var(--font-size-semi-lg);
   }
 `;
 export default FirstTemplate;

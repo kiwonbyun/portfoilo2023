@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import Reveal from '../atoms/Reveal';
 import CodeSpan from '../atoms/CodeSpan';
 import ContactButtons from '../molecules/ContactButtons';
@@ -13,7 +13,7 @@ const SecondTemplate = ({ id }: { id: string }) => {
       <LeftDiv>
         <div>
           <Reveal>
-            <CodeSpan fontSize="1.8vw">
+            <CodeSpan fontSize="--font-size-semi-sm">
               {"Hello, I'm Frontend Developer"}
             </CodeSpan>
           </Reveal>
@@ -25,10 +25,10 @@ const SecondTemplate = ({ id }: { id: string }) => {
 
         <TitledContainer title="ABOUT ME" id="aboutme">
           <Article>
-            <span>
+            <p>
               구성원 모두의 목표는 시장의 니즈를 충족하고 성장하는 Product를
               만드는 일이라고 생각합니다.
-            </span>
+            </p>
             <p>
               프론트엔드 개발자로서 목표에 어떻게 기여할 수 있을지 관심을 가지고
               고민하고 있습니다.
@@ -46,6 +46,8 @@ const SecondTemplate = ({ id }: { id: string }) => {
           src={profileImage}
           alt="profile"
           fill
+          priority
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 75vw, 50vw"
           style={{
             objectFit: 'contain',
           }}
@@ -65,12 +67,12 @@ const Article = styled.article`
 `;
 
 const Name = styled.h1`
-  font-size: 3vw;
+  font-size: var(--font-size-lg);
   letter-spacing: 3px;
   font-family: SBaL;
   margin-top: 15px;
   span {
-    font-size: 1vw;
+    font-size: var(--font-size-sm);
     margin-left: 10px;
   }
 `;

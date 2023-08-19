@@ -1,8 +1,8 @@
 import React from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 interface FlexBarProps {
-  width: number;
+  width: string;
   color?: 'codeGreen' | 'codePink' | 'codeBlue' | 'white' | 'darkGreen';
   content?: string;
   leftPadding?: number;

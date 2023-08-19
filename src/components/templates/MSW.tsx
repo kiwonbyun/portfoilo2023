@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import TitledContainer from '../molecules/TitledContainer';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import FlexBar from '../atoms/FlexBar';
 import TextBoard from '../atoms/TextBoard';
 import CodeSpan from '../atoms/CodeSpan';
 import Button from '../atoms/Button';
 
 const MSW = () => {
-  const [[one, two, three], setWidth] = useState([600, 250, 250]);
+  const [[one, two, three], setWidth] = useState(['50%', '15%', '15%']);
 
   const handleMockingClick = () => {
-    one === 750 ? setWidth([600, 250, 250]) : setWidth([750, 100, 100]);
+    one === '60%'
+      ? setWidth(['50%', '15%', '15%'])
+      : setWidth(['60%', '5%', '5%']);
   };
   return (
     <TitledContainer
@@ -19,34 +21,34 @@ const MSW = () => {
       <MockingDiv data-aos="fade-right">
         <FlexBar
           color="darkGreen"
-          width={600}
+          width="50%"
           content="요구사항 분석 및 기획"
         />
         <FlexBar
-          width={850}
+          width={'65%'}
           content="백엔드 개발"
           color="codePink"
-          leftPadding={100}
+          leftPadding={200}
         />
         <div style={{ display: 'flex' }}>
           <FlexBar
             width={one}
             content="프론트엔드 개발"
             color="codeBlue"
-            leftPadding={100}
+            leftPadding={200}
           />
           <FlexBar
             width={two}
             content="대기"
             contentcolor="black"
             color="white"
-            leftPadding={100}
+            leftPadding={200}
           />
           <FlexBar
             width={three}
             content="api 연결"
             color="codeBlue"
-            leftPadding={100}
+            leftPadding={200}
           />
         </div>
       </MockingDiv>
@@ -64,7 +66,7 @@ const MSW = () => {
           감소
         </p>
         <Button onClick={handleMockingClick}>
-          {one === 600 ? '적용 후' : '적용 전'}
+          {one === '50%' ? '적용 후' : '적용 전'}
         </Button>
       </TextBoard>
     </TitledContainer>

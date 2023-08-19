@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import TitledContainer from '../molecules/TitledContainer';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import TypingText from '../atoms/TypingText';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -19,7 +19,7 @@ const StoryBook = () => {
 
   const sameCalendarVariants = {
     initial: initState,
-    animate: typingStart ? { right: 175, top: -21 } : initState,
+    animate: typingStart ? { right: 230, top: -24 } : initState,
   };
 
   const dizzyVariants = {
@@ -146,6 +146,8 @@ const IconImageMotionDiv = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  position: absolute;
+  left: 400px;
 `;
 
 const IconImageDiv = styled.div`
@@ -153,6 +155,8 @@ const IconImageDiv = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  position: absolute;
+  left: 400px;
 `;
 
 const NewComponentWrapper = styled.div`
@@ -183,6 +187,7 @@ const ContentSection = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   code {
     font-size: 16px;
   }

@@ -1,13 +1,14 @@
+import { FontSize } from '@/interfaces/Types';
 import { Nanum_Gothic_Coding } from 'next/font/google';
 import React from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 interface CodeSpanProps {
   children: string;
   color?: 'codeGreen' | 'codePink' | 'codeBlue' | 'white';
   className?: string;
   thick?: boolean;
-  fontSize?: string;
+  fontSize?: FontSize;
   onClick?: () => void;
 }
 const nanumCodeing = Nanum_Gothic_Coding({
@@ -24,7 +25,7 @@ const CodeSpan = ({
   color = 'codeGreen',
   className,
   thick,
-  fontSize = '1.3vw',
+  fontSize = '--font-size-sm',
   ...props
 }: CodeSpanProps) => {
   return (
@@ -42,7 +43,7 @@ const CodeSpan = ({
 
 const Span = styled.span<{ color: string; fontSize: string }>`
   color: ${({ theme, color }) => theme.colors[color]};
-  font-size: ${({ fontSize }) => fontSize};
+  font-size: ${({ fontSize }) => `var(${fontSize})`};
 `;
 
 export default CodeSpan;

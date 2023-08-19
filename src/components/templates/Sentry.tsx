@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TitledContainer from '../molecules/TitledContainer';
 import TextBoard from '../atoms/TextBoard';
 import CodeSpan from '../atoms/CodeSpan';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 import RightArrow from '../icons/RightArrow';
 import Button from '../atoms/Button';
@@ -28,7 +28,7 @@ const Sentry = () => {
               width: '250px',
               height: '250px',
               opacity: 1,
-              marginLeft: '200px',
+              marginLeft: '15vw',
             }}>
             에러 발생
           </FlexBox>
@@ -94,7 +94,7 @@ const Sentry = () => {
               width: '250px',
               height: '250px',
               opacity: 1,
-              marginRight: '200px',
+              marginRight: '15vw',
             }}>
             에러 해결
           </FlexBox>

@@ -1,14 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { RefObject, useRef, useState } from 'react';
 import Tistory from '../icons/Tistory';
 import Email from '../icons/Email';
 import Phone from '../icons/Phone';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import Link from 'next/link';
 import { myEmail } from '@/constants/infos';
 import TypingText from '../atoms/TypingText';
 
 const ContactButtons = () => {
-  const phoneRef = useRef<any | null>(null);
+  const phoneRef = useRef<RefObject | null>(null);
   const [show, setShow] = useState<string | null>(null);
   const handleEmailClick = async () => {
     try {
@@ -32,22 +32,22 @@ const ContactButtons = () => {
     <Container>
       <Link href={'https://pungwa.tistory.com/'} legacyBehavior>
         <a target="_blank">
-          <Tistory size={35} />
+          <Tistory />
         </a>
       </Link>
-      <EmailWrapper onClick={handleEmailClick}>
-        <Email size={35} />
-      </EmailWrapper>
-      <div onClick={handleClickPhone}>
-        <Phone size={35} />
-      </div>
+      <PointerWrapper onClick={handleEmailClick}>
+        <Email />
+      </PointerWrapper>
+      <PointerWrapper onClick={handleClickPhone}>
+        <Phone />
+      </PointerWrapper>
       <a href="tel:010-4003-3755" ref={phoneRef}></a>
       {show === 'email' && <TypingText text="bkw9603@gmail.com" />}
       {show === 'phone' && <TypingText text="010-4003-3755" />}
     </Container>
   );
 };
-const EmailWrapper = styled.div`
+const PointerWrapper = styled.div`
   cursor: pointer;
 `;
 

@@ -37,7 +37,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>변기원의 Portfolio 방문을 환영합니다</title>
           <link rel="icon" href="/favi.ico" />
         </Head>
         <body>

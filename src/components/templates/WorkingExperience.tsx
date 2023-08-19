@@ -2,7 +2,7 @@ import React from 'react';
 import TitledContainer from '../molecules/TitledContainer';
 import CodeSpan from '../atoms/CodeSpan';
 import { myWorkHistory } from '@/constants/infos';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import TextBoard from '../atoms/TextBoard';
 
 const WorkingExperience = ({ id }: { id: string }) => {

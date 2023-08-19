@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import TitleDivider from '../atoms/TitleDivider';
 
 import { Nanum_Gothic_Coding } from 'next/font/google';

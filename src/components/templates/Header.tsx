@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { styled } from 'styled-components';
+import React, { memo, useEffect, useState } from 'react';
+import styled from 'styled-components';
 import CodeSpan from '../atoms/CodeSpan';
 import Button from '../atoms/Button';
 import { useRouter } from 'next/router';
@@ -7,7 +7,12 @@ import Image from 'next/image';
 import hiImage from 'public/hi.png';
 
 const Header = () => {
-  const { replace, pathname } = useRouter();
+  const menuList = ['about', 'skills', 'experience', 'projects', 'Goals'];
+  const {
+    replace,
+    pathname,
+    query: { target },
+  } = useRouter();
   const [scrollOpacity, setScrollOpacity] = useState(0); // 스크롤에 따른 투명도 상태 관리
 
   const handleClickMenu = (id: string) => {
@@ -28,8 +33,9 @@ const Header = () => {
         (scrollPosition - triggerScroll) / (maxScroll - triggerScroll),
         0,
       );
-
-      setScrollOpacity(opacity);
+      if (opacity <= 1) {
+        setScrollOpacity(opacity);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -41,28 +47,19 @@ const Header = () => {
   return (
     <Container opacity={scrollOpacity}>
       <MenuDiv>
-        <CodeSpan
-          fontSize="1vw"
-          color="white"
-          onClick={() => handleClickMenu('about')}>
-          ABOUT
-        </CodeSpan>
-        <CodeSpan
-          fontSize="1vw"
-          color="white"
-          onClick={() => handleClickMenu('skills')}>
-          SKILLS
-        </CodeSpan>
-        <CodeSpan
-          fontSize="1vw"
-          color="white"
-          onClick={() => handleClickMenu('experience')}>
-          EXPERIENCE
-        </CodeSpan>
+        {menuList.map((menu) => (
+          <CodeSpan
+            key={menu}
+            fontSize="--font-size-x-sm"
+            color={target === menu ? 'codeGreen' : 'white'}
+            onClick={() => handleClickMenu(menu)}>
+            {menu.toUpperCase()}
+          </CodeSpan>
+        ))}
       </MenuDiv>
       <div className="title" onClick={handleclickTitle}>
         <Image width={60} height={60} src={hiImage} alt="me" />
-        <CodeSpan thick fontSize="1.4vw">
+        <CodeSpan thick fontSize="--font-size-sm">
           Byun Kiwon
         </CodeSpan>
       </div>
@@ -121,4 +118,4 @@ const Container = styled.header<{ opacity: number }>`
   }
 `;
 
-export default Header;
+export default memo(Header);

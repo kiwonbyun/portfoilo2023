@@ -1,17 +1,18 @@
+import { FontSize } from '@/interfaces/Types';
 import React, { useEffect, useRef, useState } from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 interface TypingTextProps {
   text: string;
   color?: 'codeGreen' | 'codePink' | 'codeBlue' | 'white';
-  size?: string;
+  size?: FontSize;
   noBlink?: boolean;
 }
 
 const TypingText = ({
   text,
   color = 'white',
-  size = '14px',
+  size = '--font-size-sm',
   noBlink = false,
 }: TypingTextProps) => {
   const [animationStarted, setAnimationStarted] = useState(false);
@@ -86,7 +87,7 @@ const Typing = styled.div<{
     white-space: nowrap;
     overflow: hidden;
     border-right: ${({ blink }) => (blink === 'true' ? 'none' : ' 3px solid')};
-    font-size: ${({ size }) => size};
+    font-size: ${({ size }) => `var(${size})`};
     color: ${({ theme, color }) => theme.colors[color]};
   }
 `;

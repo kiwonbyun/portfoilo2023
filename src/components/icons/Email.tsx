@@ -1,9 +1,10 @@
 import React from 'react';
 import { SvgProps } from '../../interfaces/IconInterfaces';
+import SvgContainer from '../atoms/SvgContainer';
 
 const Email = ({ fill = 'white', size = 40 }: SvgProps) => {
   return (
-    <svg
+    <SvgContainer
       fill={fill}
       height={size}
       width={size}
@@ -23,7 +24,7 @@ const Email = ({ fill = 'white', size = 40 }: SvgProps) => {
 	c7.512,7.511,17.493,11.645,28.104,11.645c10.61,0,20.592-4.134,28.104-11.645l45.82-45.819l101.49,101.499H71.327L172.827,274.152z
 	"
       />
-    </svg>
+    </SvgContainer>
   );
 };
 

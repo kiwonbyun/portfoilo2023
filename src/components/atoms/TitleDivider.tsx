@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeSpan from './CodeSpan';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import Reveal from './Reveal';
 
 interface TitleDividerProps {
@@ -10,8 +10,8 @@ interface TitleDividerProps {
 const TitleDivider = ({ children }: TitleDividerProps) => {
   return (
     <Reveal>
-      <Container long={children.length * 20 + 100}>
-        <CodeSpan thick fontSize="1.8vw">
+      <Container>
+        <CodeSpan thick className="span-content" fontSize="--font-size-semi-sm">
           {children}
         </CodeSpan>
       </Container>
@@ -19,10 +19,11 @@ const TitleDivider = ({ children }: TitleDividerProps) => {
   );
 };
 
-const Container = styled.div<{ long: number }>`
-  width: ${({ long }) => `${long}px`};
+const Container = styled.div`
+  width: fit-content;
   border-bottom: 1px solid ${({ theme }) => theme.colors.codeGreen};
   margin: 16px 0px;
+  letter-spacing: 1px;
 `;
 
 export default TitleDivider;

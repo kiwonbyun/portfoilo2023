@@ -1,7 +1,7 @@
 import CodeSpan from '@/components/atoms/CodeSpan';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import storybookScreenShot from 'public/storybook_screen_shot.png';
 import atomicScreenShot from 'public/atomic_screen_shot.png';
 import RightArrow from '@/components/icons/RightArrow';

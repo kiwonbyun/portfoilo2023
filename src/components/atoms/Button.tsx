@@ -1,6 +1,6 @@
 import React from 'react';
-import { styled } from 'styled-components';
 import { Nanum_Gothic_Coding } from 'next/font/google';
+import styled from 'styled-components';
 const nanumCodeing = Nanum_Gothic_Coding({
   weight: '400',
   subsets: ['latin'],
@@ -40,6 +40,7 @@ const Wrapper = styled.button<{ color: string }>`
     color === 'inherit' ? `1px solid ${theme.colors.codeGreen}` : 'none'};
   border-radius: 5px;
   padding: 0px 20px;
+  font-size: var(--font-size-x-sm);
 `;
 
 export default Button;

@@ -3,11 +3,17 @@ import { motion } from 'framer-motion';
 
 const RightArrow = ({ size = 23, fill = '#2fe848' }) => {
   const variants = {
-    initial: { width: '23px', height: '23px' },
+    initial: {
+      width: 'var(--font-size-semi-sm)',
+      height: 'var(--font-size-semi-sm)',
+    },
     animate:
       size === 23
-        ? { width: '23px', height: '23px' }
-        : { width: size, height: size },
+        ? {
+            width: 'var(--font-size-semi-sm)',
+            height: 'var(--font-size-semi-sm)',
+          }
+        : { width: 'var(--font-size-lg)', height: 'var(--font-size-lg)' },
   };
 
   return (
