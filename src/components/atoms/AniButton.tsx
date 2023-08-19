@@ -1,33 +1,43 @@
-import React from 'react';
-import { Nanum_Gothic_Coding } from 'next/font/google';
+import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { Nanum_Gothic_Coding } from 'next/font/google';
 const nanumCodeing = Nanum_Gothic_Coding({
   weight: '400',
   subsets: ['latin'],
 });
 
-interface ButtonProps {
-  children: string;
-  onClick: () => void;
+interface AniButtonProps {
+  children: ReactNode | string;
   color?: 'codeGreen' | 'codePink' | 'codeBlue' | 'white' | 'black' | 'inherit';
+  onClick?: () => void;
 }
 
-const Button = ({ children, onClick, color = 'codeGreen' }: ButtonProps) => {
+function AniButton({
+  children,
+  color = 'codeGreen',
+  onClick = () => {},
+}: AniButtonProps) {
   const handleClick = () => {
     if (onClick) onClick();
   };
 
   return (
-    <Wrapper
+    <MotionButton
       onClick={handleClick}
+      whileHover={{
+        scale: 1.1,
+      }}
+      whileTap={{ scale: 0.9, backgroundColor: 'green' }}
+      transition={{ duration: 0.1 }}
       className={nanumCodeing.className}
       color={color}>
       {children}
-    </Wrapper>
+    </MotionButton>
   );
-};
+}
 
-const Wrapper = styled.button<{ color: string }>`
+const MotionButton = styled(motion.button)<{ color: string }>`
   margin: auto;
   width: fit-content;
   height: 35px;
@@ -43,4 +53,4 @@ const Wrapper = styled.button<{ color: string }>`
   font-size: var(--font-size-x-sm);
 `;
 
-export default Button;
+export default AniButton;

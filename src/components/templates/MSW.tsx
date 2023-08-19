@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import FlexBar from '../atoms/FlexBar';
 import TextBoard from '../atoms/TextBoard';
 import CodeSpan from '../atoms/CodeSpan';
-import Button from '../atoms/Button';
+import AniButton from '../atoms/AniButton';
 
 const MSW = () => {
   const [[one, two, three], setWidth] = useState(['50%', '15%', '15%']);
@@ -65,9 +65,9 @@ const MSW = () => {
           <CodeSpan>•</CodeSpan>Result: api개발 종속성이 적어진 만큼 대기 기간
           감소
         </p>
-        <Button onClick={handleMockingClick}>
+        <AniButton onClick={handleMockingClick}>
           {one === '50%' ? '적용 후' : '적용 전'}
-        </Button>
+        </AniButton>
       </TextBoard>
     </TitledContainer>
   );

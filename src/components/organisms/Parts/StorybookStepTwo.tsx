@@ -73,7 +73,7 @@ const StorybookStepTwo = ({ step }: { step: number }) => {
           initial="initial"
           animate="animate"
           transition={{ duration: 0.5, delay: 1 }}>
-          <CodeSpan fontSize="14px" className="component-name">
+          <CodeSpan fontSize="--font-size-sm" className="component-name">
             Calendar.tsx
           </CodeSpan>
         </motion.div>
@@ -82,12 +82,12 @@ const StorybookStepTwo = ({ step }: { step: number }) => {
           className={`${nanumCodeing.className} component-name`}
           initial={{
             opacity: 1,
-            fontSize: '14px',
+            fontSize: '18px',
             height: '18px',
           }}
           animate={{
             opacity: 1,
-            fontSize: '18px',
+            fontSize: '25px',
             height: '18px',
           }}
           exit={{ opacity: 0 }}
@@ -100,7 +100,10 @@ const StorybookStepTwo = ({ step }: { step: number }) => {
           initial="initial"
           animate="animate"
           transition={{ duration: 0.5, delay: 1 }}>
-          <CodeSpan fontSize="14px" color="codeBlue" className="component-name">
+          <CodeSpan
+            fontSize="--font-size-sm"
+            color="codeBlue"
+            className="component-name">
             DirtyCalendar.tsx
           </CodeSpan>
         </motion.div>
@@ -110,7 +113,10 @@ const StorybookStepTwo = ({ step }: { step: number }) => {
           initial="initial"
           animate="animate"
           transition={{ duration: 0.8, delay: 1 }}>
-          <CodeSpan fontSize="14px" color="codePink" className="component-name">
+          <CodeSpan
+            fontSize="--font-size-sm"
+            color="codePink"
+            className="component-name">
             BrokenCalendar.tsx
           </CodeSpan>
         </motion.div>

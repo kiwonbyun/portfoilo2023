@@ -17,6 +17,7 @@ const ColumnContentsDiv = styled.div`
   padding: 15px 10px;
   flex-direction: column;
   gap: 15px;
+  height: 100%;
   span {
     margin-right: 10px;
   }

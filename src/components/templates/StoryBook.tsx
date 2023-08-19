@@ -9,7 +9,7 @@ import macbookImage from 'public/macbook.png';
 import CodeSpan from '../atoms/CodeSpan';
 import StorybookStepTwo from '../organisms/Parts/StorybookStepTwo';
 import TextBoard from '../atoms/TextBoard';
-import Button from '../atoms/Button';
+import AniButton from '../atoms/AniButton';
 
 const StoryBook = () => {
   const [typingStart, setTypingStart] = useState(false);
@@ -57,21 +57,21 @@ const StoryBook = () => {
           <FolderWrapper ref={typingRef}>
             <code>/components</code>
             <code className="sub">/atoms</code>
-            <CodeSpan fontSize="14px" className="component-name">
+            <CodeSpan fontSize="--font-size-sm" className="component-name">
               Calendar.tsx
             </CodeSpan>
             <code className="sub">/molecules</code>
             <div style={{ height: '18px' }}></div>
             <code className="sub">/organisms</code>
             <CodeSpan
-              fontSize="14px"
+              fontSize="--font-size-sm"
               color="codeBlue"
               className="component-name">
               DirtyCalendar.tsx
             </CodeSpan>
             <code className="sub">/templates</code>
             <CodeSpan
-              fontSize="14px"
+              fontSize="--font-size-sm"
               color="codePink"
               className="component-name">
               BrokenCalendar.tsx
@@ -124,12 +124,12 @@ const StoryBook = () => {
           <CodeSpan>•</CodeSpan>Result: 재사용 컴포넌트 활용으로 중복코드 제거,
           협업 효율성 증가, 개발기간 단축
         </p>
-        <Button
+        <AniButton
           onClick={() => {
             setStep((prev) => (prev === 2 ? 0 : prev + 1));
           }}>
           after
-        </Button>
+        </AniButton>
       </TextBoard>
     </TitledContainer>
   );

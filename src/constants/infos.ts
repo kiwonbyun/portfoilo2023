@@ -4,7 +4,6 @@ export const mySkills = [
   'React',
   'Next.js',
   'React-Query',
-  'Zustand',
   'Recoil',
   'Styled-Components',
   'Tailwindcss',

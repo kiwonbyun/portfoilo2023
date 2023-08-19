@@ -7,7 +7,7 @@ import codeImage from 'public/code.png';
 import goodCodeImage from 'public/goodCode.png';
 import RightArrow from '../icons/RightArrow';
 import CodeSpan from '../atoms/CodeSpan';
-import Button from '../atoms/Button';
+import AniButton from '../atoms/AniButton';
 
 const Atomic = () => {
   const [show, setShow] = useState(false);
@@ -112,12 +112,12 @@ const Atomic = () => {
         <span>
           <CodeSpan>•</CodeSpan>Result: 가독성 증가 및 중복되는 코드 제거
         </span>
-        <Button
+        <AniButton
           onClick={() => {
             setShow((prev) => !prev);
           }}>
           {show ? '적용 전' : '적용 후'}
-        </Button>
+        </AniButton>
       </TextBoard>
     </TitledContainer>
   );

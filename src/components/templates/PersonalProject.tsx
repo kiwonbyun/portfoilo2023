@@ -115,6 +115,7 @@ const PersonalProject = () => {
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-bottom: -100px;
 `;
 
 export default PersonalProject;

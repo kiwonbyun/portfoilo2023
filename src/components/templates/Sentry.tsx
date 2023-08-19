@@ -5,8 +5,9 @@ import CodeSpan from '../atoms/CodeSpan';
 import styled from 'styled-components';
 
 import RightArrow from '../icons/RightArrow';
-import Button from '../atoms/Button';
+
 import FlexBox from '../atoms/FlexBox';
+import AniButton from '../atoms/AniButton';
 
 const Sentry = () => {
   const [after, setAfter] = useState(false);
@@ -113,9 +114,9 @@ const Sentry = () => {
           <CodeSpan>•</CodeSpan>Result: 담당 개발자 외 추가적인 인력낭비 감소,
           선제적인 에러 대응 가능
         </p>
-        <Button onClick={handleClickAfter}>
+        <AniButton onClick={handleClickAfter}>
           {after ? '적용 전' : '적용 후'}
-        </Button>
+        </AniButton>
       </TextBoard>
     </TitledContainer>
   );

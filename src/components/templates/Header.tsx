@@ -1,10 +1,12 @@
 import React, { memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CodeSpan from '../atoms/CodeSpan';
-import Button from '../atoms/Button';
+
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import hiImage from 'public/hi.png';
+
+import AniButton from '../atoms/AniButton';
 
 const Header = () => {
   const menuList = ['about', 'skills', 'experience', 'projects', 'Goals'];
@@ -64,9 +66,7 @@ const Header = () => {
         </CodeSpan>
       </div>
       <div>
-        <Button onClick={() => {}} color="inherit">
-          Resume
-        </Button>
+        <AniButton color="inherit">Resume</AniButton>
       </div>
     </Container>
   );

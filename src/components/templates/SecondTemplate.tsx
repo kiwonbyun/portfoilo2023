@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Reveal from '../atoms/Reveal';
 import CodeSpan from '../atoms/CodeSpan';
-import ContactButtons from '../molecules/ContactButtons';
 import Image from 'next/image';
 import profileImage from 'public/profile.jpeg';
 import TitledContainer from '../molecules/TitledContainer';
+import Email from '../icons/Email';
+import Phone from '../icons/Phone';
+import Tistory from '../icons/Tistory';
 
 const SecondTemplate = ({ id }: { id: string }) => {
   return (
@@ -20,7 +22,20 @@ const SecondTemplate = ({ id }: { id: string }) => {
           <Name>
             변기원<CodeSpan color="white">Byun Kiwon</CodeSpan>
           </Name>
-          <ContactButtons />
+          <Col>
+            <ContactDiv>
+              <Email />
+              <CodeSpan color="white">bkw9603@gamil.com</CodeSpan>
+            </ContactDiv>
+            <ContactDiv>
+              <Phone />
+              <CodeSpan color="white">010-4003-3755</CodeSpan>
+            </ContactDiv>
+            <ContactDiv>
+              <Tistory size={35} />
+              <CodeSpan color="white">Blog</CodeSpan>
+            </ContactDiv>
+          </Col>
         </div>
 
         <TitledContainer title="ABOUT ME" id="aboutme">
@@ -56,6 +71,19 @@ const SecondTemplate = ({ id }: { id: string }) => {
     </SecondSection>
   );
 };
+
+const Col = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 3px;
+`;
+
+const ContactDiv = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
 
 const Article = styled.article`
   width: 90%;

@@ -6,8 +6,6 @@ import FirstTemplate from '@/components/templates/FirstTemplate';
 import styled from 'styled-components';
 import Header from '@/components/templates/Header';
 import SecondTemplate from '@/components/templates/SecondTemplate';
-import Skills from '@/components/templates/Skills';
-import WorkingExperience from '@/components/templates/WorkingExperience';
 import MSW from '@/components/templates/MSW';
 import Sentry from '@/components/templates/Sentry';
 import Atomic from '@/components/templates/Atomic';
@@ -16,6 +14,7 @@ import { useRouter } from 'next/router';
 import PersonalProject from '@/components/templates/PersonalProject';
 import Head from 'next/head';
 import Future from '@/components/templates/Future';
+import SkillAndEx from '@/components/templates/SkillAndEx';
 
 const notosans = Noto_Sans_KR({ weight: '400', subsets: ['latin'] });
 
@@ -48,8 +47,7 @@ export default function Home() {
         <FirstTemplate />
         <SecondTemplate id="about" />
         <ThirdSection>
-          <Skills id="skills" />
-          <WorkingExperience id="experience" />
+          <SkillAndEx />
           <MSW />
           <Sentry />
           <Atomic />
@@ -63,7 +61,6 @@ export default function Home() {
 }
 
 const ThirdSection = styled.section`
-  /* height: 100vh; */
   margin: 0px 100px;
   display: flex;
   flex-direction: column;
