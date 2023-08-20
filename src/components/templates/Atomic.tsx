@@ -100,6 +100,14 @@ const Atomic = () => {
           />
         )}
       </ContentSection>
+      <ButtonDiv>
+        <AniButton
+          onClick={() => {
+            setShow((prev) => !prev);
+          }}>
+          {show ? '되돌리기' : '결과보기'}
+        </AniButton>
+      </ButtonDiv>
       <TextBoard>
         <span>
           <CodeSpan>•</CodeSpan>Problem Statement: Page파일에 집중된 Logic,
@@ -112,16 +120,16 @@ const Atomic = () => {
         <span>
           <CodeSpan>•</CodeSpan>Result: 가독성 증가 및 중복되는 코드 제거
         </span>
-        <AniButton
-          onClick={() => {
-            setShow((prev) => !prev);
-          }}>
-          {show ? '적용 전' : '적용 후'}
-        </AniButton>
       </TextBoard>
     </TitledContainer>
   );
 };
+
+const ButtonDiv = styled.div`
+  text-align: end;
+  margin-bottom: 20px;
+  margin-right: 20px;
+`;
 
 const FlexDiv = styled.div`
   display: flex;
@@ -222,7 +230,7 @@ const CodeWrapper = styled.div`
 `;
 
 const ContentSection = styled.section`
-  margin: 30px 0px 50px 0px;
+  margin: 30px 0px 30px 0px;
   display: flex;
   justify-content: space-between;
   position: relative;

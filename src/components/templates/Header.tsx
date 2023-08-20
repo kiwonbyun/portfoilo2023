@@ -7,6 +7,7 @@ import Image from 'next/image';
 import hiImage from 'public/hi.png';
 
 import AniButton from '../atoms/AniButton';
+import Link from 'next/link';
 
 const Header = () => {
   const menuList = ['about', 'skills', 'experience', 'projects', 'Goals'];
@@ -65,9 +66,15 @@ const Header = () => {
           Byun Kiwon
         </CodeSpan>
       </div>
-      <div>
-        <AniButton color="inherit">Resume</AniButton>
-      </div>
+      <Link
+        href={
+          'https://drive.google.com/file/d/10vlm7mwXLo-UBYoQWtRzJgRyJ1X4axFb/view?usp=sharing'
+        }
+        legacyBehavior>
+        <a target="_blank">
+          <AniButton color="inherit">Resume</AniButton>
+        </a>
+      </Link>
     </Container>
   );
 };

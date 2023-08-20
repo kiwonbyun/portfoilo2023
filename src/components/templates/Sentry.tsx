@@ -100,6 +100,11 @@ const Sentry = () => {
             에러 해결
           </FlexBox>
         </BoxWrapper>
+        <div className="button-div" data-aos="fade-left">
+          <AniButton onClick={handleClickAfter}>
+            {after ? '되돌리기' : '결과보기'}
+          </AniButton>
+        </div>
       </ContentSection>
       <TextBoard>
         <p>
@@ -114,9 +119,6 @@ const Sentry = () => {
           <CodeSpan>•</CodeSpan>Result: 담당 개발자 외 추가적인 인력낭비 감소,
           선제적인 에러 대응 가능
         </p>
-        <AniButton onClick={handleClickAfter}>
-          {after ? '적용 전' : '적용 후'}
-        </AniButton>
       </TextBoard>
     </TitledContainer>
   );
@@ -129,7 +131,15 @@ const BoxWrapper = styled.div`
 `;
 
 const ContentSection = styled.section`
-  margin: 30px 0px 50px 0px;
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .button-div {
+    text-align: end;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 export default Sentry;

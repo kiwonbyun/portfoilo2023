@@ -111,6 +111,14 @@ const StoryBook = () => {
         )}
         {step === 2 && <StorybookStepTwo step={step} />}
       </ContentSection>
+      <ButtonDiv>
+        <AniButton
+          onClick={() => {
+            setStep((prev) => (prev === 2 ? 0 : prev + 1));
+          }}>
+          {step === 2 ? '되돌리기' : '다음'}
+        </AniButton>
+      </ButtonDiv>
       <TextBoard>
         <p>
           <CodeSpan>•</CodeSpan>Problem Statement: 폴더 구분 기준의 모호함,
@@ -124,16 +132,16 @@ const StoryBook = () => {
           <CodeSpan>•</CodeSpan>Result: 재사용 컴포넌트 활용으로 중복코드 제거,
           협업 효율성 증가, 개발기간 단축
         </p>
-        <AniButton
-          onClick={() => {
-            setStep((prev) => (prev === 2 ? 0 : prev + 1));
-          }}>
-          after
-        </AniButton>
       </TextBoard>
     </TitledContainer>
   );
 };
+
+const ButtonDiv = styled.div`
+  text-align: end;
+  margin-bottom: 20px;
+  margin-right: 20px;
+`;
 
 const FlexWrapper = styled.div<{ step: number }>`
   display: flex;
