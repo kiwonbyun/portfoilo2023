@@ -6,10 +6,7 @@ import mailImg from 'public/mail.png';
 import CodeSpan from '../atoms/CodeSpan';
 import Github from '../icons/Github';
 import Project from '../organisms/Parts/Project';
-import Youtube from '../icons/Youtube';
-import asyncImg from 'public/async.png';
-import domImg from 'public/dom.png';
-import promiseImg from 'public/promise.png';
+
 import Presentation from '../organisms/Parts/Presentation';
 
 const PersonalProject = () => {
@@ -54,11 +51,8 @@ const PersonalProject = () => {
 
       <TitledContainer title="Presentation" id="Presentation">
         <Presentation
-          src={asyncImg}
+          youtubeId="8-MiztthUnc"
           title="동기 & 비동기"
-          codeLink="https://youtu.be/8-MiztthUnc"
-          linkIcon={<Youtube size={18} fill="red" />}
-          linkText="발표자료 보러가기"
           width="560px">
           <CodeSpan fontSize="--font-size-x-sm" color="white">
             날짜: 2022. 04
@@ -72,11 +66,8 @@ const PersonalProject = () => {
           </CodeSpan>
         </Presentation>
         <Presentation
-          src={domImg}
+          youtubeId="5ZY0UScTNxk"
           title="DOM이란 무엇일까?"
-          codeLink="https://youtu.be/5ZY0UScTNxk"
-          linkIcon={<Youtube size={18} fill="red" />}
-          linkText="발표자료 보러가기"
           width="560px">
           <CodeSpan fontSize="--font-size-x-sm" color="white">
             날짜: 2022. 05
@@ -90,11 +81,8 @@ const PersonalProject = () => {
           </CodeSpan>
         </Presentation>
         <Presentation
-          src={promiseImg}
+          youtubeId="KhfYUCbxQp0"
           title="비동기 처리와 Promise의 역할"
-          codeLink="https://youtu.be/KhfYUCbxQp0"
-          linkIcon={<Youtube size={18} fill="red" />}
-          linkText="발표자료 보러가기"
           width="560px">
           <CodeSpan fontSize="--font-size-x-sm" color="white">
             날짜: 2022. 05

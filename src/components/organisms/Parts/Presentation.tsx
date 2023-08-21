@@ -1,73 +1,53 @@
 import CodeSpan from '@/components/atoms/CodeSpan';
 import Reveal from '@/components/atoms/Reveal';
-import ProjectCard from '@/components/molecules/ProjectCard';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import Link from 'next/link';
-import React, { ReactNode } from 'react';
+import YoutubeCard from '@/components/molecules/YoutubeCard';
+import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
 
 interface PresentationProps {
-  src: StaticImport;
+  youtubeId: string;
   title: string;
   children: ReactNode;
-  codeLink?: string;
-  showLink?: boolean;
-  linkIcon?: React.ReactElement;
-  linkText?: string;
   height?: string;
   width?: string;
 }
 
 function Presentation({
-  src,
+  youtubeId,
   title,
   children,
-  codeLink,
-  showLink = true,
-  linkIcon,
-  linkText,
   height,
   width,
 }: PresentationProps) {
+  const [isPlaying, setIsPlaying] = useState(false);
   return (
     <Container>
-      <ProjectCard src={src} width={width} height={height} />
-      <div className="description">
-        <Reveal className="title">
-          <CodeSpan fontSize="--font-size-sm">{`•${title}`}</CodeSpan>
-        </Reveal>
-        {children}
-        {showLink && (
-          <Link href={codeLink ?? ''} legacyBehavior>
-            <CenterLink target="_blank">
-              {linkIcon}
-              <CodeSpan fontSize="--font-size-x-sm" color="white">
-                {linkText ?? ''}
-              </CodeSpan>
-            </CenterLink>
-          </Link>
-        )}
-      </div>
+      <YoutubeCard
+        youtubeId={youtubeId}
+        width={width}
+        height={height}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+      />
+
+      {!isPlaying && (
+        <div className="description">
+          <Reveal className="title">
+            <CodeSpan fontSize="--font-size-sm">{`•${title}`}</CodeSpan>
+          </Reveal>
+          {children}
+        </div>
+      )}
     </Container>
   );
 }
-const CenterLink = styled.a`
-  display: flex;
-  align-items: center;
-  margin-top: 3px;
-  gap: 3px;
-  span {
-    &:hover {
-      color: ${({ theme }) => theme.colors.codePink};
-    }
-  }
-`;
 
 const Container = styled.div`
   width: 100%;
+  height: 530px;
   .description {
     position: relative;
-    bottom: 80px;
+    bottom: 60px;
     left: 20px;
     z-index: 10;
     display: flex;
